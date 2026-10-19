@@ -1,4 +1,7 @@
-<%= form_with(model: movie) do |form| %>
+<%= form_with(model: movie, class: "movie-form") do |form| %>
+  <%= hidden_field_tag :sort, @sort_column %>
+  <%= hidden_field_tag :direction, @sort_direction %>
+
   <% if movie.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>

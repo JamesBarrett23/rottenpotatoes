@@ -1,11 +1,17 @@
-<% content_for :title, "New movie" %>
+<main class="page-shell narrow-shell">
+  <% content_for :title, "New movie" %>
 
-<h1>New movie</h1>
+  <header class="page-header">
+    <p class="eyebrow">Add to the movie list</p>
+    <h1>New movie</h1>
+    <p class="page-intro">Give this movie a place on the big screen.</p>
+  </header>
 
-<%= render "form", movie: @movie %>
+  <section class="form-card">
+    <%= render "form", movie: @movie %>
+  </section>
 
-<br>
-
-<div>
-  <%= link_to "Back to movies", movies_path %>
-</div>
+  <nav class="action-bar">
+    <%= link_to "Back to movies", movies_path(sorting_query), class: "button button-secondary" %>
+  </nav>
+</main>
